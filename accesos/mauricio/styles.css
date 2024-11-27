@@ -1,0 +1,357 @@
+/* Configuración básica */
+body {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #2c0332;
+    color: #fbdb3d;
+    line-height: 1.6;
+}
+
+/* Responsive Navbar (already good, but with minor improvements) */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #2c0332;
+    padding: 10px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+}
+
+.logo img {
+    height: 90px; /* Slightly smaller on mobile */
+    width: auto;
+}
+
+.nav-links {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.nav-links a {
+    color: rgb(249, 216, 85);
+    text-decoration: none;
+    font-weight: bold;
+    padding: 5px 10px;
+    transition: color 0.3s ease;
+}/* Hero Section */
+.hero {
+    position: relative;
+    z-index: 1; /* Para asegurar que el contenido esté por encima de la imagen */
+}
+
+/* Imagen de fondo dentro del div */
+.hero-image {
+    width: 100%;
+    height: 100vh; /* Ocupa toda la altura de la ventana */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden; /* Evita que la imagen se desborde */
+}
+
+.hero-img {
+    width: 100%;
+    height: auto;
+    object-fit: cover; /* Asegura que la imagen cubra el área sin distorsionarse */
+}
+
+/* Responsive adjustments for mobile */
+@media screen and (max-width: 768px) {
+    .hero-image {
+        height: auto; /* Ajuste de altura para pantallas pequeñas */
+    }
+    .hero-img {
+        object-fit: contain; /* Cambiar a contain en dispositivos móviles */
+    }
+}
+
+/* Navbar */
+.navbar {
+    position: absolute; /* Fija la barra de navegación en la parte superior */
+    top: px;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    z-index: 1000; /* Asegura que el navbar esté sobre otros elementos */
+}
+
+
+
+
+.hero h1 {
+    font-size: 3rem; /* Large, prominent title */
+    margin-bottom: 15px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Add depth to text */
+    max-width: 90%; /* Prevent extremely wide text on large screens */
+    line-height: 1.2;
+}
+
+.hero p {
+    font-size: 1.5rem;
+    font-style: italic;
+    opacity: 0.9;
+    max-width: 80%;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+/* Media Queries for Hero Section */
+@media screen and (max-width: 768px) {
+    .hero {
+        padding: 150px 20px; /* Reduced padding for smaller screens */
+    }
+
+    .hero h1 {
+        font-size: 2.2rem; /* Smaller font size on mobile */
+    }
+
+    .hero p {
+        font-size: 1.2rem;
+        max-width: 95%; /* Wider on mobile */
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .hero {
+        padding: 100px 15px; /* Even less padding on very small screens */
+    }
+
+    .hero h1 {
+        font-size: 1.8rem; /* Smallest font size for mobile */
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+}
+
+/* Responsive Container */
+.container {
+    padding: 20px;
+    max-width: 100%;
+    margin: 100px auto 50px; /* Adjusted for mobile */
+    box-sizing: border-box;
+}
+
+.section-image {
+    width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    max-width: 600px; /* Limita el ancho de la imagen */
+    margin-left: auto;
+    margin-right: auto; /* Centra la imagen */
+    display: block; /* Asegura que la imagen se maneje como un bloque y se pueda centrar */
+}
+
+
+/* Responsive List Section */
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    margin: 20px 0;
+    display: flex;
+    flex-wrap: wrap; /* Allow wrapping */
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+li img {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    margin-bottom: 15px;
+    border-radius: 10px;
+}
+
+/* Responsive Typography */
+h2 {
+    color: #fffc64;
+    border-bottom: 2px solid #490d6b;
+    padding-bottom: 10px;
+    text-align: center;
+    font-size: 2.5rem; /* Slightly smaller on mobile */
+}
+
+h3 {
+    color: #fffc64;
+    padding-bottom: 10px;
+    text-align: center;
+    font-size: 2.5rem; /* Slightly smaller on mobile */
+}
+
+/* Responsive Video Section */
+#video {
+    background: linear-gradient(135deg, rgba(138, 43, 226, 0.8), rgba(255, 192, 203, 0.8));
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 100%;
+    width: 90%;
+    text-align: center;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    position: relative;
+    overflow: hidden;
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+#video video {
+    max-width: 100%;
+    height: auto;
+    border: 3px solid rgba(255, 255, 255, 0.5);
+    border-radius: 10px;
+}
+/* Responsive Footer Styles */
+.footer {
+    background-image: url('https://img.freepik.com/vector-premium/marco-colorido-hecho-huellas-patas-mascotas-vector-ilustracion-horizontal-signos-lineas-huellas-animales_104589-847.jpg?semt=ais_hybrid');
+    background-size: cover;
+    background-position: center;
+    color: rgba(255, 235, 10, 0.905);
+    text-align: center;
+    padding: 15px;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    box-sizing: border-box;
+    z-index: 1000; /* Ensure footer stays on top */
+}
+
+.footer-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-column {
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 10px;
+    border-radius: 8px;
+    flex: 1;
+}
+
+.footer-column h4 {
+    margin-bottom: 10px;
+    font-size: 1rem;
+    text-transform: uppercase;
+}
+
+.footer-column p {
+    margin: 5px 0;
+    font-size: 0.9rem;
+}
+
+/* Mobile Responsiveness */
+@media screen and (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .footer-column {
+        width: 90%;
+        max-width: 350px;
+    }
+
+    .footer-column p {
+        font-size: 0.8rem;
+    }
+}
+/* Media Query para pantallas grandes (PC) */
+@media screen and (min-width: 1024px) {
+    .footer {
+        background-size: cover; /* La imagen sigue cubriendo el área */
+        background-position: center center; /* Centrado de la imagen */
+        min-height: 30vh; /* Aumenta la altura del footer para pantallas grandes */
+    }
+}
+
+/* Media Queries for Different Screen Sizes */
+@media screen and (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .nav-links {
+        margin-top: 10px;
+    }
+
+    .hero {
+        padding: 100px 10px;
+        text-align: center;
+    }
+
+    .container {
+        margin-top: 80px;
+        padding: 10px;
+    }
+
+    li {
+        flex-direction: column;
+    }
+
+    li img {
+        margin-bottom: 15px;
+        margin-right: 0;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .logo img {
+        height: 80px;
+    }
+
+    .nav-links {
+        gap: 10px;
+    }
+
+    .nav-links a {
+        font-size: 0.9rem;
+    }
+
+    h2 {
+        font-size: 2.5rem;
+    }
+}
+
+/* Existing Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}

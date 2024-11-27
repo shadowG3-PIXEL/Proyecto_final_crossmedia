@@ -1,0 +1,858 @@
+   
+   * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #161d25;
+}
+
+/* Contenedor del menú */
+.menu {
+    position: absolute;
+    top: 10px;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+    padding: 0 10px;
+}
+
+/* Contenedor del logo */
+.logo-container {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+/* Tamaño del logo */
+.logo {
+    width: 40px;
+    height: auto;
+    margin-right: 10px;
+}
+
+/* Ajuste del texto del logo */
+.logo-text {
+    color: #E0003E;
+    font-size: 25px;
+    font-weight: 800;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+/* Menú de navegación en pantallas grandes (PC) */
+.menu .navbar ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.menu .navbar ul li {
+    margin: 0 10px;
+}
+
+.menu .navbar ul li a {
+    font-size: 18px;
+    color: #FFFFFF;
+    font-weight: 600;
+    padding: 5px 0;
+    text-decoration: none;
+}
+
+.menu .navbar ul li a:hover {
+    color: #E0003E;
+}
+
+/* Icono del menú hamburguesa (solo en pantallas pequeñas) */
+.menu-icon {
+    display: none;
+    cursor: pointer;
+    color: white;
+    font-size: 30px;
+}
+
+/* Media Queries para pantallas más pequeñas */
+@media screen and (max-width: 768px) {
+    .menu-icon {
+        display: block;
+        color: white;
+        position: absolute;
+        top: 15px;
+        right: 15px;
+    }
+
+    .menu .navbar {
+        position: absolute;
+        top: 50px;
+        left: 0;
+        width: 100%;
+    }
+
+    .menu .navbar ul {
+        display: none;
+        flex-direction: column;
+        background-color: rgba(0, 0, 0, 0.9);
+        width: 100%;
+    }
+
+    .menu .navbar.show ul {
+        display: flex;
+    }
+
+    .menu .navbar ul li {
+        margin: 10px 0;
+        width: 100%;
+        text-align: center;
+    }
+
+    .menu .navbar ul li a {
+        display: block;
+        padding: 15px;
+        font-size: 20px;
+    }
+}
+/* Estilos para el video de fondo */
+.back-video {
+position: fixed; /* Fijar el video en la pantalla */
+top: 0;
+left: 0;
+z-index: -1; /* Asegurarnos de que esté detrás de todo el contenido */
+width: 100%; /* Aseguramos que el video cubra todo el ancho de la pantalla */
+height: 100%; /* Aseguramos que el video cubra toda la altura de la pantalla */
+object-fit: cover; /* Hace que el video cubra todo el espacio sin deformarse */
+background-color: black; /* En caso de que el video no se cargue correctamente */
+}
+
+.container {
+max-width: 1200px;
+margin: 0 auto;
+}
+/* Contenedor principal de la cabecera */
+.header-content {
+width: 100%; /* Asegura que ocupe todo el ancho */
+padding-top: 60px; /* Reduce el espacio superior para que el contenido no quede tan abajo */
+}
+
+/* Contenedor del texto del encabezado */
+.header-txt {
+width: 100%;
+text-align: center; /* Centra el texto */
+color: #fff;
+}
+
+/* Estilo del título principal */
+.header-txt h1 {
+font-size: 70px;
+line-height: 80px;
+text-transform: uppercase;
+margin-bottom: 25px;
+}
+
+.header-txt h1 span {
+color: #E0003E;
+}
+
+/* Estilo del párrafo */
+.header-txt p {
+font-size: 40px;
+color: #d5d5d5;
+margin: 0 10%; /* Margen para que el texto no esté pegado a los lados */
+margin-bottom: 25px;
+}
+
+/* Estilo de los botones */
+.buttons {
+display: flex;
+justify-content: center; /* Centra los botones */
+gap: 20px; /* Espacio entre los botones */
+}
+
+.btn-1 {
+background-color: #E0003E;
+color: #fff;
+text-decoration: none;
+padding: 15px 30px;
+font-size: 18px;
+font-weight: 600;
+border-radius: 5px;
+transition: background-color 0.3s ease;
+}
+
+.btn-1:hover {
+background-color: #d10036;
+}
+
+/* Media Queries para pantallas más pequeñas */
+@media screen and (max-width: 1024px) {
+.header-txt h1 {
+font-size: 40px;
+line-height: 50px;
+}
+
+.header-txt p {
+font-size: 20px;
+margin: 0 20%; /* Menos margen en tablets */
+}
+
+.btn-1 {
+padding: 12px 25px; /* Reducir el tamaño de los botones */
+}
+}
+
+@media screen and (max-width: 768px) {
+.header-txt h1 {
+font-size: 35px;
+line-height: 45px;
+}
+
+.header-txt p {
+font-size: 18px;
+margin: 0 10%;
+}
+
+.btn-1 {
+padding: 10px 20px; /* Ajustar el tamaño de los botones */
+}
+}
+
+@media screen and (max-width: 480px) {
+.header-txt h1 {
+font-size: 30px;
+}
+
+.header-txt p {
+font-size: 20px;
+margin: 0 5%;
+}
+
+.btn-1 {
+font-size: 16px;
+padding: 8px 15px;
+}
+}
+
+/* Botones */
+.buttons {
+display: flex;
+justify-content: center;
+flex-wrap: wrap; /* Asegura que los botones no se salgan de la pantalla */
+}
+
+.btn-1 {
+display: inline-block;
+background-color: #E0003E;
+padding: 13px 25px;
+width: 150px;
+margin: 0 10px;
+border-radius: 25px;
+color: #FFFFFF;
+text-align: center;
+}
+
+.btn-1:hover {
+background-color: #c30239;
+}
+
+/* Servicios */
+.services {
+padding: 100px 0;
+display: grid;
+grid-template-columns: repeat(3, 1fr);
+gap: 35px;
+}
+
+.service {
+text-align: center;
+padding: 35px;
+}
+
+.service img {
+width: 80px;
+height: 80px;
+}
+
+.service h3 {
+font-size: 30px;
+color: #FFFFFF;
+margin-bottom: 15px;
+}
+
+p {
+font-size: 20px;
+color: #d5d5d5;
+}
+
+/* About */
+.about {
+padding: 50px 0;
+}
+
+.about-content {
+display: flex;
+align-items: center;
+justify-content: space-between;
+}
+
+.about-txt {
+flex-basis: 50%;
+padding-right: 35px;
+font-size: 50px;
+}
+
+span {
+font-size: 15px;
+font-weight: 700;
+text-transform: uppercase;
+color: #C30239;
+}
+
+h2 {
+font-size: 35px;
+color: #FFFFFF;
+margin: 5px 0;
+line-height: 1;
+}
+
+hr {
+border: 1px solid #c30239;
+width: 10%;
+margin-bottom: 30px;
+}
+
+.about-img {
+flex-basis: 50%;
+text-align: center;
+}
+
+.about-img img {
+width: 500px;
+border-radius: 25px;
+}
+
+/* Testimonios */
+.testimonal {
+padding: 50px 0;
+text-align: center;
+}
+
+.testimonial-content {
+display: flex;
+justify-content: space-between;
+margin-top: 35px;
+}
+
+.testimonial-1 {
+flex-basis: calc(50% - 25px);
+background-color: #24272e;
+padding: 25px;
+box-shadow: 0 0 20px rgba(0,0,0,0.4);
+}
+
+.testimonial-1 h4 {
+color: #FFFFFF;
+font-size: 15px;
+margin-bottom: 15px;
+}
+
+.testimonial-1 p {
+font-size: 15px;
+margin-bottom: 10px;
+}
+
+.face {
+width: 70px;
+height: 70px;
+border-radius: 50%;
+border: 4px solid #C30239;
+margin-bottom: 15px;
+}
+
+/* Información */
+.information {
+padding: 50px 0 100px 0;
+display: flex;
+justify-content: space-between;
+}
+
+.information-txt {
+flex-basis: 50%;
+}
+
+.f1, .f2 {
+width: 550px;
+}
+
+/* Media Queries para pantallas pequeñas */
+
+@media screen and (max-width: 1024px) {
+.services {
+grid-template-columns: repeat(2, 1fr); /* Dos columnas en tablets */
+gap: 20px;
+}
+
+.service h3 {
+font-size: 25px; /* Reducir tamaño de los títulos */
+}
+
+.service img {
+width: 60px;
+height: 60px; /* Reducir tamaño de las imágenes */
+}
+
+.about-content {
+flex-direction: column; /* Apilar las columnas en dispositivos más pequeños */
+align-items: center;
+text-align: center;
+}
+
+.about-txt {
+font-size: 35px; /* Reducir el tamaño de la fuente */
+padding-right: 0;
+}
+
+.about-img img {
+width: 400px; /* Reducir el tamaño de la imagen */
+}
+
+.testimonial-content {
+flex-direction: column; /* Apilar los testimonios verticalmente */
+}
+
+.testimonial-1 {
+flex-basis: 100%; /* Ocupa todo el ancho disponible */
+margin-bottom: 20px;
+}
+
+.information {
+flex-direction: column; /* Apilar información en dispositivos pequeños */
+}
+
+.f1, .f2 {
+width: 100%;
+}
+}
+
+@media screen and (max-width: 768px) {
+.header-txt h1 {
+font-size: 35px; /* Ajustar tamaño de fuente en móviles */
+line-height: 45px;
+}
+
+.header-txt p {
+font-size: 18px; /* Reducir tamaño de texto en móviles */
+padding: 0 20px;
+}
+
+.buttons {
+flex-direction: column; /* Colocar los botones uno debajo del otro */
+}
+
+.btn-1 {
+width: 100%; /* Los botones ocuparán el 100% del ancho */
+margin-bottom: 15px;
+}
+
+.menu .navbar ul li {
+display: block;
+text-align: center; /* Hacer el menú vertical */
+}
+
+.menu .navbar ul li a {
+padding: 10px 0;
+}
+}
+
+@media screen and (max-width: 480px) {
+.header-txt h1 {
+font-size: 30px; /* Ajustar aún más el tamaño de la fuente */
+}
+
+.header-txt p {
+font-size: 16px; /* Reducir más el tamaño del texto */
+}
+
+.about-txt {
+font-size: 25px; /* Reducir el tamaño de la fuente */
+}
+
+.about-img img {
+width: 300px; /* Reducir aún más el tamaño de la imagen */
+}
+
+.testimonial-1 h4 {
+font-size: 13px; /* Ajustar tamaño del nombre en los testimonios */
+}
+
+.testimonial-1 p {
+font-size: 12px; /* Reducir tamaño de texto en los testimonios */
+}
+
+.face {
+width: 50px;
+height: 50px; /* Reducir tamaño de la imagen del rostro */
+}
+
+.information-txt {
+font-size: 14px; /* Reducir tamaño de texto en dispositivos pequeños */
+}
+
+.f1, .f2 {
+width: 100%; /* Asegurar que las secciones de información ocupen el 100% */
+}
+}
+
+/* Estilo de los inputs */
+input {
+display: block;
+padding: 17px;
+background-color: transparent;
+border: 1px solid #979797;
+width: 350px;
+margin-bottom: 25px;
+font-size: 17px;
+color: #FFFFFF;
+}
+
+::placeholder {
+color: #898989;
+}
+
+/* Estilos para la sección de oficina */
+.office {
+margin: 50px 0;
+display: flex;
+align-items: center;
+}
+
+.office h3 {
+font-size: 17px;
+font-weight: 500;
+margin-left: 15px;
+color: #FFFFFF;
+}
+
+/* Estilos del footer */
+.footer {
+padding: 50px 0;
+background-color: #191a1f;
+}
+
+.footer-content {
+display: flex;
+justify-content: space-between;
+}
+
+.link h3 {
+font-size: 17px;
+color: #FFFFFF;
+margin-bottom: 10px;
+text-transform: uppercase;
+}
+
+.link a {
+font-size: 17px;
+color: #d4d4d4;
+display: block;
+margin-bottom: 10px;
+}
+
+.link a:hover {
+color: #C30239;
+}
+
+/* Media Queries para pantallas pequeñas (<= 991px) */
+@media(max-width: 991px) {
+
+
+
+/* Servicios */
+.service {
+padding: 30px;
+grid-template-columns: repeat(1, 1fr); /* Cambiar a una sola columna en pantallas pequeñas */
+}
+
+/* Acerca de */
+.about {
+padding: 30px;
+}
+
+hr {
+display: none; /* Ocultar la línea horizontal en pantallas pequeñas */
+}
+
+.about-content {
+flex-direction: column;
+text-align: center;
+}
+
+.about-txt {
+padding-bottom: 25px;
+}
+
+/* Testimonios */
+.testimonal {
+padding: 30px;
+}
+
+.testimonial-content {
+flex-direction: column;
+}
+
+.testimonial-1 {
+margin-bottom: 25px;
+}
+
+/* Información */
+.information {
+padding: 30px;
+flex-direction: column;
+}
+
+.f1, .f2 {
+width: 100%; /* Asegurar que las secciones f1 y f2 ocupen todo el ancho */
+}
+
+.information-txt {
+order: -2;
+margin: 0 0 20px 0;
+text-align: center;
+}
+
+/* Formulario */
+form {
+width: 100%;
+}
+
+input {
+width: 100%; /* Los inputs ocuparán el 100% del ancho disponible */
+}
+
+/* Footer */
+.footer {
+padding: 30px;
+}
+
+.footer-content {
+flex-direction: column;
+text-align: center;
+}
+
+/* Ajustar el tamaño de los enlaces en el footer */
+.link h3 {
+font-size: 16px; /* Reducir el tamaño de los títulos */
+}
+
+.link a {
+font-size: 16px; /* Reducir el tamaño de los enlaces */
+}
+}
+
+/* Media Queries para pantallas aún más pequeñas (<= 768px) */
+@media(max-width: 768px) {
+
+/* Ajustar los estilos de los inputs */
+input {
+width: 100%;
+padding: 15px; /* Reducir el padding */
+font-size: 16px; /* Reducir el tamaño de la fuente */
+}
+
+.office h3 {
+font-size: 14px; /* Reducir el tamaño de los títulos */
+}
+
+.footer-content {
+flex-direction: column;
+text-align: center;
+}
+
+.link h3 {
+font-size: 14px; /* Reducir el tamaño de los títulos en el footer */
+}
+
+.link a {
+font-size: 14px; /* Reducir el tamaño de los enlaces en el footer */
+}
+}
+
+/* Media Queries para pantallas de móviles (<= 480px) */
+@media(max-width: 480px) {
+
+/* Ajustar los estilos de los inputs */
+input {
+width: 100%;
+padding: 12px; /* Ajustar padding */
+font-size: 15px; /* Reducir tamaño de fuente */
+}
+
+.office h3 {
+font-size: 13px; /* Reducir tamaño de texto en dispositivos más pequeños */
+}
+
+.footer {
+padding: 20px;
+}
+
+.footer-content {
+flex-direction: column;
+text-align: center;
+}
+
+.link h3 {
+font-size: 13px; /* Reducir tamaño de los títulos en el footer */
+}
+
+.link a {
+font-size: 13px; /* Reducir tamaño de los enlaces en el footer */
+}
+}
+.about-section {
+    padding: 40px 20px;
+    color: #333;
+}
+
+.about-section h2 {
+    font-size: 80px;
+    text-align: center;
+    margin-bottom: 20px;
+    color: #E0003E;
+}
+
+.about-section p {
+    font-size: 30px;
+    line-height: 1.6;
+    text-align: justify;
+    margin-bottom: 20px;
+    color: #ffffff;
+
+}
+
+.about-content {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    margin-bottom: 30px;
+}
+
+.about-content .mission,
+.about-content .vision {
+    flex: 1;
+    background-color: #48464660;
+    padding: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.about-content h3 {
+    font-size: 50px;
+    color: #E0003E;
+    margin-bottom: 10px;
+}
+
+
+.values {
+    margin-top: 40px;
+    background-color: #48464660;
+    padding: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.values h3 {
+    font-size: 50px;
+    color: #E0003E;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.values ul {
+    list-style: none;
+    padding: 0;
+    font-size: 20px;
+    line-height: 1.6;
+    color: #ffffff;
+
+    text-align: left;
+}
+
+.values ul li {
+    margin-bottom: 10px;
+}
+
+/* Media Queries para dispositivos pequeños */
+@media screen and (max-width: 768px) {
+    .about-section h2 {
+        font-size: 28px;
+    }
+
+    .about-section p {
+        font-size: 16px;
+    }
+
+    .about-content {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .about-content .mission,
+    .about-content .vision {
+        flex: none;
+        width: 100%;
+    }
+
+    .team-members {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .team-member img {
+        width: 80px;
+        height: 80px;
+    }
+
+    .team-member h4 {
+        font-size: 16px;
+    }
+
+    .values h3 {
+        font-size: 20px;
+    }
+
+    .values ul li {
+        font-size: 16px;
+    }
+}
+
+/* Media Queries para dispositivos aún más pequeños (móviles) */
+@media screen and (max-width: 480px) {
+    .about-section h2 {
+        font-size: 60px;
+    }
+
+    .about-section p {
+        font-size: 20px;
+    }
+
+    .about-content h3 {
+        font-size: 50px;
+    }
+
+    .team h3 {
+        font-size: 20px;
+    }
+
+    .values h3 {
+        font-size: 50px;
+    }
+
+    .values ul li {
+        font-size: 20px;
+    }
+}
